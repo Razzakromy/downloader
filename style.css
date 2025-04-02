@@ -1,0 +1,59 @@
+/* Font */
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
+/* Color Variant */
+:root {
+    --primary: #592E83;
+    --secondary: #9984D4;
+    --bg: #CAA8F5;
+    --white: #fff;
+    --border_shadow: rgba(114, 182, 38, 0.15);
+    --dark: #292c35;
+
+}
+
+/* Common Css Start*/
+body {
+    font-family: Karla, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--dark);
+    background: var(--white);
+    transition: all 0.3s ease-in-out !important;
+    -webkit-transition: all 0.3s ease-in-out !important;
+    -moz-transition: all 0.3s ease-in-out !important;
+    -ms-transition: all 0.3s ease-in-out !important;
+    -o-transition: all 0.3s ease-in-out !important;
+    width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: Karla, sans-serif;
+    font-weight: 800 !important;
+    text-transform: capitalize;
+}
+
+a:hover {
+    color: var(--primary);
+}
+
+::-moz-selection {
+    color: var(--white);
+    background-color: var(--primary);
+}
+
+::selection {
+    color: var(--white);
+    background-color: var(--primary);
+}
+
+::-moz-selection {
+    color: var(--white);
+    background-color: var(--primary);
+}
+
+/* Common Css End */

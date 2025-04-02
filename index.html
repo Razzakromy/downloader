@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Downlaoder</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.min.css">
+
+    <script src="alpine.js"></script>
+    <script src="tailwind.js"></script>
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <header x-data="{ mobilenavOpen: false }"
+        class="md:flex items-center text-black justify-between [&>*]:px-8 h-20 sticky top-0 z-50">
+        <div class="flex items-center justify-between h-20">
+            <logo>
+                <a class="flex items-center gap-1" href="">
+                    <img class="h-8 -mt-1" src="https://img.icons8.com/material-outlined/24/instagram-new--v1.png" />
+                    <span class="text-lg font-bold">Awesome</span>
+                </a>
+            </logo>
+            <mobileicon class="md:hidden">
+                <a @click="mobilenavOpen = !mobilenavOpen"
+                    class="h-12 w-12 flex items-center justify-center cursor-pointer">
+                    <img x-show="!mobilenavOpen" class="w-6 h-6 select-none"
+                        src="https://img.icons8.com/?size=64&id=PopBByxQS5ai&format=png" />
+
+                    <img x-show="mobilenavOpen" x-cloak class="w-6 h-6 select-none"
+                        src="https://img.icons8.com/color/48/delete-sign--v1.png" />
+
+                </a>
+            </mobileicon>
+        </div>
+        <nav x-show="mobilenavOpen" x-cloak
+            class="md:!block h-screen bg-white w-screen md:h-auto md:w-auto -mt-20 md:mt-0 absolute md:relative z-[-1]"
+            x-transition:enter="duration-300 ease-out" x-transition:enter-start="opacity-0 -translate-y-96"
+            x-transition:enter-end="opacity-100 translate-y-0">
+            <ul
+                class="flex items-center navitems flex-col md:flex-row gap-8 md:gap-0 justify-center text-black h-full -translate-y-10 md:translate-y-0">
+                <li><a href="">General</a></li>
+                <li><a href="">Prices</a></li>
+                <li x-data="{ dropdownOpen: false }" class="relative">
+                    <a @click="dropdownOpen = !dropdownOpen" @click.away="dropdownOpen = false"
+                        class="cursor-pointer select-none">Services
+                        <img x-bind:class="dropdownOpen && 'rotate-180 duration-300'" class="w-4"
+                            src="https://img.icons8.com/small/32/777777/expand-arrow.png" />
+                    </a>
+                    <div x-show="dropdownOpen" x-cloak class="absolute right-0 bg-white text-black  w-40 p-2 z-20"
+                        x-transition:enter="duration-300 ease-out"
+                        x-transition:enter-start="opacity-0 -translate-y-5 scale-90"
+                        x-transition:enter-end="opacity-100 translate-y-0 scale-100">
+                        <ul class="hoverlist [&>li>a]:justify-end">
+                            <li><a href="">Promo</a></li>
+                            <li><a href="">Direct</a></li>
+                            <li><a href="">Posting</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="">Tools</a></li>
+                <li><a href="">Lab</a></li>
+                <!-- Button -->
+                <div class="flex flex-col md:flex-row gap-8 md:gap-0 md:space-x-4">
+                    <li><a href="" class="button">Tools</a></li>
+                    <li><a href="" class="button">Lab</a></li>
+                </div>
+
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main -->
+    <main>
+        <h1 class="text-3xl text-primary">MARKETING TOOLKIT FOR INSTAGRAM</h1>
+        <p> Marketing toolkit for instagram Marketing toolkit for instagramMarketing toolkit for instagramMarketing
+            toolkit for instagramMarketing toolkit for instagramMarketing toolkit for instagramMarketing toolkit for
+            instagramMarketing toolkit for instagram</p>
+        <button class="button">click me</button>
+        <h1 class="">hello world</h1>
+    </main>
+    <!-- Main -->
+
+    <footer class="absolute bottom-0 mt-5 sm:p-5 p-3 mx-auto w-full text-sm sm:text-lg">
+        <p>Design & Development by <a href="https://razzakromy.com">RazzakRomy</a> </p>
+    </footer>
+
+</body>
+
+</html>
